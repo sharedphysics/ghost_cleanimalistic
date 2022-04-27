@@ -1,0 +1,29 @@
+{{!< default}}
+
+<div class="content-area">
+	<main class="site-main">
+		{{#post}}
+			{{> content width="wide"}}
+			
+		<div class="single-content kg-canvas u-text-format">
+			{{#get 'tags' limit='all' include='count.posts'}}
+				{{#foreach tags}}
+					<h2>{{name}} ({{ count.posts }})</h2>
+					{{#get "posts" include="tags" filter="tag:{{slug}}"}}
+						<div>
+							<ul>
+							{{#foreach posts}}
+								<li class="series-list">
+									{{#has tag="popular"}}⭑{{/has}}{{#has tag="notebook"}}<span style="font-size:1.2rem;">📓</span>{{/has}} <a href="{{url}}" aria-label="{{title}}">{{title}}</a>, {{date published_at format="MMMM DD, YYYY"}}
+								</li>
+							{{/foreach}}
+							</ul>
+						</div>	
+						
+					{{/get}}
+				{{/foreach}}		
+			{{/get}} 
+		</div>
+		{{/post}}
+	</main>
+</div>

@@ -1,0 +1,48 @@
+<div style="display:table-row;">
+    <div class="mobile-loop-hide-2">
+       {{#has tag="popular"}}⭑{{/has}}
+       {{#has tag="notebook"}}<span style="font-size:1.2rem;">📓</span>{{/has}}
+    </div>
+    <div style="display:table-cell;" class="loop-div">
+        <span class="mobile-loop-show">
+            {{#has tag="popular"}}⭑{{/has}}
+            {{#has tag="[notebook]"}}<span style="font-size:1.2rem;">📓</span>{{/has}}
+        </span> <a href="{{url}}" aria-label="{{title}}">{{title}}</a>
+        <div class="mobile-loop-show">
+            <br><span style="font-size: 1rem; color:grey;">{{date published_at format="MMMM DD, YYYY"}}</span>
+        </div>
+    </div>
+    <div class="mobile-loop-hide">
+        {{date published_at format="MMMM DD, YYYY"}}
+    </div>
+</div>    
+    
+
+
+
+
+<!--
+<article class="feed {{post_class}}">
+    <div class="feed-calendar">
+        <div class="feed-calendar-month">
+            {{date published_at format="MMM"}}
+        </div>
+        <div class="feed-calendar-day">
+            {{date published_at format="DD"}}
+        </div>
+    </div>
+    <h2 class="feed-title">{{title}}</h2>
+    <div class="feed-right">
+        <svg class="icon feed-visibility feed-visibility-{{visibility}}">
+            <use xlink:href="#star"></use>
+        </svg>
+        <div class="feed-length">
+            {{reading_time}}
+        </div>
+    </div>
+    <svg class="icon feed-icon">
+        <use xlink:href="#chevron-right"></use>
+    </svg>
+    <a class="u-permalink" href="{{url}}" aria-label="{{title}}"></a>
+</article>
+-->
